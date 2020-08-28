@@ -47,7 +47,7 @@ a {
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
   color: $colour-primary;
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 a:active,
 a:hover {
@@ -391,7 +391,7 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  font-size: 1.3rem;
+  font-size: 14px;
   margin-bottom: 2.3rem;
   line-height: 1.6;
 }
@@ -686,4 +686,29 @@ section {
 .no-padding {
   margin: 0;
   padding: 0;
+}
+
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 20px 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
 }

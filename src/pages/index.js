@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -21,7 +21,28 @@ const IndexPage = props => {
     }
   `)
 
+  const func = () => {
+    let acc = document.querySelectorAll(".accordion")
+    let i
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active")
+        let panel = this.nextElementSibling
+        if (panel.style.display === "block") {
+          panel.style.display = "none"
+        } else {
+          panel.style.display = "block"
+        }
+      })
+    }
+  }
+
   console.log(data.wpPage)
+
+  useEffect(() => {
+    func()
+  }, [])
 
   return (
     <Layout>
@@ -31,7 +52,7 @@ const IndexPage = props => {
           <p>24/7 BIOREMEDIATION SERVICE | CALL 1300 246 429</p>
         </div>
       </InfoBanner>
-      <HeroBanner>
+      <HeroBanner size="large">
         <div className="container">
           <div className="row-flex">
             <div className="col-1">

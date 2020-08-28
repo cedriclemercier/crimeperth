@@ -26,9 +26,11 @@ const Header = props => {
     <header className={styles.headerContainer}>
       <div className="container">
         <div className={styles.header}>
-          <Link to="/">
-            <Logo alt="Perth Crime Logo" style={styles.logo} />
-          </Link>
+          <div className={styles.headerItem}>
+            <Link to="/">
+              <Logo alt="Perth Crime Logo" style={styles.logo} />
+            </Link>
+          </div>
 
           <div className={[styles.tagline, styles.desktopOnly].join(" ")}>
             <h3>Experienced Bio-Recovery Technicians</h3>
@@ -36,16 +38,17 @@ const Header = props => {
               1300 <strong>BIO HAZ</strong>
             </h3>
           </div>
+
           <div className={[styles.social, styles.desktopOnly].join(" ")}>
             <SocialIcon href="https://facebook.com/forensiccleaningmelbourne">
-              <IoLogoFacebook color="#a0a0a0" size={22} />
+              <IoLogoFacebook color="#a0a0a0" size={32} />
             </SocialIcon>
             <SocialIcon href="https://www.reddit.com/user/Forensic_Cleaning">
-              <IoLogoReddit color="#a0a0a0" size={22} />
+              <IoLogoReddit color="#a0a0a0" size={32} />
             </SocialIcon>
           </div>
-          <Burger sidebarToggle={sidebarToggleHandler} />
         </div>
+        <Burger sidebarToggle={sidebarToggleHandler} />
       </div>
 
       <Sidebar show={sidebarOpen} sidebarClose={sidebarCloseHandler}></Sidebar>

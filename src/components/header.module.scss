@@ -19,10 +19,6 @@
   align-items: center;
   justify-content: flex-end;
 
-  div {
-    flex-grow: 1;
-  }
-
   h3 {
     font-style: italic;
   }
@@ -36,23 +32,32 @@
   align-content: flex-end;
 }
 
-.tagline h3 {
-  margin-left: 20px;
-  font-size: 20px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  box-sizing: border-box;
+.tagline {
+  flex-grow: 1;
+  h3 {
+    margin-left: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    box-sizing: border-box;
 
-  strong {
-    color: $colour-accent;
+    strong {
+      color: $colour-accent;
+    }
   }
+}
+
+.headerItem {
+  flex-grow: 1;
+}
+
+.social {
+  text-align: right;
+  flex-grow: 1;
 }
 
 @media (max-width: 768px) {
   .desktopOnly {
     display: none;
   }
-}
-
-.social {
 }

@@ -2,7 +2,13 @@
 
 .whitebox {
   background-color: $colour-white;
-  padding: 4rem;
+  padding: 45px;
   border: 1px solid $colour-grey-100;
-  margin: 30px 0;
+  margin: 25px 0;
+}
+
+@media (max-width: 768px) {
+  .whitebox {
+    padding: 30px;
+  }
 }

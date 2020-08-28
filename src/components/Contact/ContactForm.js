@@ -20,8 +20,8 @@ const ContactForm = () => {
       method: "post",
       url: `${WEBSITE_URL}/wp-json/jwt-auth/v1/token`,
       data: {
-        username: process.env.USERNAME, // provide a user credential with subscriber role, subscriber role does not have any priviledges
-        password: process.env.USERPASSWORD,
+        username: "Subscriber", // provide a user credential with subscriber role, this user does not have any priviledges so exposing this is fine at the moment
+        password: "UaqwFL22W#5)uNafDx3#BMPJ",
       },
       headers: {
         "Content-Type": "application/json",
@@ -144,10 +144,28 @@ const ContactForm = () => {
           </SubmitButton>
         </div>
         {messageSent && isSuccessMessage && (
-          <div>Message sent successfully!</div>
+          <div
+            class="container"
+            style={{
+              padding: "20px",
+              marginTop: "20px",
+              backgroundColor: "#F6F7C9",
+            }}
+          >
+            <p>Message sent successfully!</p>
+          </div>
         )}
         {messageSent && !isSuccessMessage && (
-          <div>something went wrong please try again.</div>
+          <div
+            class="container"
+            style={{
+              padding: "20px",
+              marginTop: "20px",
+              backgroundColor: "#EA8689",
+            }}
+          >
+            <p>something went wrong please try again.</p>
+          </div>
         )}
       </form>
     </div>

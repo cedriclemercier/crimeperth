@@ -1,5 +1,4 @@
 .heroContainer {
-  height: 60vh;
   width: 100%;
   background-image: url("../../images/hero-banner-2.jpg");
   background-size: cover;
@@ -8,8 +7,16 @@
   position: relative;
 
   h2 {
-    font-size: 4rem;
+    font-size: 34px;
   }
+}
+
+.small {
+  height: 15vh;
+}
+
+.large {
+  height: 60vh;
 }
 
 .overlayContainer {
@@ -26,7 +33,13 @@
   padding: 40px;
 }
 
-// .overlay {
-//   position: absolute;
-//   z-index: 9;
-// }
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px;
+  }
+
+  .heroContainer {
+    background-position-y: center;
+    background-position-x: center;
+  }
+}

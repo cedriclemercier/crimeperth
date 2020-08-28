@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import HeroBanner from "../components/Banners/heroBanner"
 import InfoBanner from "../components/Banners/infoBanner"
 import BlogItem from "../components/Blog/BlogItem"
 
@@ -81,6 +82,12 @@ const Page = props => {
           <p>24/7 BIOREMEDIATION SERVICE | CALL 1300 246 429</p>
         </div>
       </InfoBanner>
+      <HeroBanner size="small">
+        <div class="container">
+          <h1 className="text-primary">{props.data.wpPage.title}</h1>
+        </div>
+      </HeroBanner>
+
       {pageContent}
     </Layout>
   )

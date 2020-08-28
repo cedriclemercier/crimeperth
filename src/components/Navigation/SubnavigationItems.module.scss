@@ -12,11 +12,6 @@
   .item {
     padding: 10px 20px;
   }
-
-  :hover {
-    transition: all 100ms;
-    background-color: $colour-grey-20;
-  }
 }
 
 @media (min-width: 769px) {
