@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/bcsc/v2.crimescenecleanerperth.com.au/
+    - /bin/cp -R /home/bcsc/repositories/crimescenecleanerperth/public $DEPLOYPATH
