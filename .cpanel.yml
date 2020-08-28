@@ -1,6 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/bcsc/v2.crimescenecleanerperth.com.au/
-    - gatsby build
-    - /bin/cp -R build $DEPLOYPATH
