@@ -688,7 +688,6 @@ section {
   padding: 0;
 }
 
-
 .accordion {
   background-color: #eee;
   color: #444;
@@ -702,8 +701,9 @@ section {
   transition: 0.4s;
 }
 
-.active, .accordion:hover {
-  background-color: #ccc; 
+.active,
+.accordion:hover {
+  background-color: #ccc;
 }
 
 .panel {
@@ -711,4 +711,15 @@ section {
   display: none;
   background-color: white;
   overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .video {
+    display: none;
+  }
 }

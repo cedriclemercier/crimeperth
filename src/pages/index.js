@@ -1,5 +1,7 @@
 import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import herovideo from "../images/hero-banner.mp4"
+import Video from "../components/UI/Video/Video"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,6 +10,7 @@ import InfoBanner from "../components/Banners/infoBanner"
 import WhiteBox from "../components/Boxes/whitebox"
 import DefaultButton from "../components/UI/Button/DefaultButton"
 import ContactForm from "../components/Contact/ContactForm"
+import hero from "../components/Banners/heroBanner"
 
 const IndexPage = props => {
   const data = useStaticQuery(graphql`
