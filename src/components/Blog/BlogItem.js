@@ -11,8 +11,6 @@ const BlogItem = props => {
 
   const tags = props.tags.nodes
 
-  console.log(date)
-
   return (
     <div className={styles.blogItem}>
       <div className={styles.date}>

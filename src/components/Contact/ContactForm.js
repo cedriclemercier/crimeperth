@@ -7,7 +7,7 @@ import SubmitButton from "../UI/Button/SubmitButton"
 import styles from "./ContactForm.module.scss"
 
 const ContactForm = () => {
-  const WEBSITE_URL = "http://admin.crimescenecleanerperth.com.au"
+  const WEBSITE_URL = "https://admin.crimescenecleanerperth.com.au"
   const FORM_ID = "2124" //Form id that provides Contact Form 7
 
   const [token, setToken] = useState("") // store token

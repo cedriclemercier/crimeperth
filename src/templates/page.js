@@ -52,7 +52,6 @@ const Page = props => {
 
   // If the current page queried is a blog "posts" page, then query list of posts
   if (props.data.wpPage.isPostsPage) {
-    console.log(props.data.allWpPost.edges)
     pageContent = (
       <section>
         <div className="container">

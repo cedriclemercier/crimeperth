@@ -41,8 +41,6 @@ const IndexPage = props => {
     }
   }
 
-  console.log(data.wpPage)
-
   useEffect(() => {
     func()
   }, [])
