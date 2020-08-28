@@ -1,0 +1,28 @@
+@import "../../styles/colours";
+
+.subNavigationItems {
+  display: none;
+  background-color: $colour-white;
+  margin: 0;
+  margin-top: 10px;
+  list-style: none;
+  z-index: 99;
+  border-top: 2px solid $colour-primary;
+
+  .item {
+    padding: 10px 20px;
+  }
+
+  :hover {
+    transition: all 100ms;
+    background-color: $colour-grey-20;
+  }
+}
+
+@media (min-width: 769px) {
+  .subNavigationItems {
+    margin: 0;
+    top: 33px;
+    position: absolute;
+  }
+}

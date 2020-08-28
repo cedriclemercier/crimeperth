@@ -1,0 +1,21 @@
+.navigationItems {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-flow: column;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+@media (min-width: 769px) {
+  .navigationItems {
+    flex-flow: row;
+  }
+}
+
+// @media (min-width: 500px) {
+//   .navigationItems {
+//     flex-flow: row;
+//   }
+// }

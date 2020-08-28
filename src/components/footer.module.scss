@@ -1,0 +1,28 @@
+@import "../styles/colours";
+
+.footerContainer {
+  background-color: $colour-primary;
+}
+
+.footer {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  color: $colour-white;
+
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+.copyright {
+  padding: 1rem 0;
+  background-color: $colour-white;
+
+  p {
+    color: $colour-black;
+  }
+}
+
+.link {
+  color: $colour-grey-20;
+}

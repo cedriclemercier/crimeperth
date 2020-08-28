@@ -1,0 +1,14 @@
+@import "../../../styles/colours";
+
+.button {
+  background-color: $colour-primary;
+  padding: 1rem 3rem;
+  color: $colour-white;
+  font-size: 16px;
+  cursor: pointer;
+  border: 0;
+}
+
+.active {
+  background-color: "blue";
+}

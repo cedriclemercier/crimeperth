@@ -1,0 +1,58 @@
+@import "../styles/colours";
+
+.headerContainer {
+  background-image: url("../images/header-bg.png");
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .headerContainer {
+    background-position-x: 10vw;
+    background-size: 70%;
+  }
+}
+
+.header {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  div {
+    flex-grow: 1;
+  }
+
+  h3 {
+    font-style: italic;
+  }
+}
+
+.header a {
+  height: 100%;
+}
+
+.nav {
+  align-content: flex-end;
+}
+
+.tagline h3 {
+  margin-left: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+
+  strong {
+    color: $colour-accent;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktopOnly {
+    display: none;
+  }
+}
+
+.social {
+}

@@ -1,36 +1,63 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
+import NavigationItems from "./Navigation/NavigationItems"
+import Burger from "./Navigation/burger"
+import Sidebar from "./Navigation/sidebarNav"
+import { IoLogoFacebook, IoLogoReddit } from "react-icons/io"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import Logo from "./UI/Logo"
+import SocialIcon from "./Social/SocialIcon"
 
+import styles from "./header.module.scss"
+
+const Header = props => {
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  const sidebarToggleHandler = () => {
+    setSidebarOpen(!sidebarOpen)
+  }
+
+  const sidebarCloseHandler = () => {
+    setSidebarOpen(false)
+  }
+
+  return (
+    <header className={styles.headerContainer}>
+      <div className="container">
+        <div className={styles.header}>
+          <Link to="/">
+            <Logo alt="Perth Crime Logo" style={styles.logo} />
+          </Link>
+
+          <div className={[styles.tagline, styles.desktopOnly].join(" ")}>
+            <h3>Experienced Bio-Recovery Technicians</h3>
+            <h3>
+              1300 <strong>BIO HAZ</strong>
+            </h3>
+          </div>
+          <div className={[styles.social, styles.desktopOnly].join(" ")}>
+            <SocialIcon href="https://facebook.com/forensiccleaningmelbourne">
+              <IoLogoFacebook color="#a0a0a0" size={22} />
+            </SocialIcon>
+            <SocialIcon href="https://www.reddit.com/user/Forensic_Cleaning">
+              <IoLogoReddit color="#a0a0a0" size={22} />
+            </SocialIcon>
+          </div>
+          <Burger sidebarToggle={sidebarToggleHandler} />
+        </div>
+      </div>
+
+      <Sidebar show={sidebarOpen} sidebarClose={sidebarCloseHandler}></Sidebar>
+
+      <nav className={styles.desktopOnly}>
+        <div className={[styles.nav, "container"].join(" ")}>
+          <NavigationItems />
+        </div>
+      </nav>
+    </header>
+  )
+}
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }

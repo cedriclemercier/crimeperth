@@ -1,11 +1,23 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Crime Scene Cleaner Perth`,
+    description: `The Industry Experts in Crime Scene Cleaning, Forensic Cleaning, Biological Remediation and Meth Lab Decontamination throughout Perth and regional Western Australia.`,
+    author: `Forensic Cleaning`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        url: `https://admin.crimescenecleanerperth.com.au/graphql`,
+        schema: {
+          typePrefix: "Wp",
+        },
+        develop: {
+          hardCacheMediaFiles: true,
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,6 +25,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -24,7 +37,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/perth-logo.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

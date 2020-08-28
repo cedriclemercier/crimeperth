@@ -1,0 +1,32 @@
+@import "../../styles/colours";
+@import "../../styles/fonts";
+
+.formContainer {
+  width: 100%;
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  label {
+    font-size: $paragraph;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea,
+  select {
+    min-height: 40px;
+    padding: 0.5rem;
+    font-size: $paragraph;
+    border: 1px solid $colour-grey-50;
+
+    &:focus {
+      border: 1px solid $colour-secondary;
+    }
+  }
+}

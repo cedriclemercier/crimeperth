@@ -1,0 +1,22 @@
+@import "../../../styles/colours";
+
+.button {
+  background-color: $colour-primary;
+  padding: 1rem 3rem;
+  color: $colour-white;
+  cursor: pointer;
+  transition: all 50ms;
+  display: inline-block;
+
+  &:hover {
+    background-color: $colour-accent;
+    color: $colour-white;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+
+  }
+}

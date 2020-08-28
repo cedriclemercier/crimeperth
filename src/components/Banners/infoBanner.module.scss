@@ -1,0 +1,15 @@
+@import "../../styles/colours";
+
+.infoContainer {
+  min-height: 40px;
+  width: 100%;
+  background-color: $colour-primary;
+  background-size: cover;
+  padding: 10px 0;
+}
+
+.infoContainer p {
+  text-align: right;
+  color: #fff;
+  margin: 0;
+}

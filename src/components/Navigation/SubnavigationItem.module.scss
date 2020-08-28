@@ -1,0 +1,11 @@
+@import "../../styles/colours";
+
+.item {
+  padding: 12px 10px;
+  min-width: 120px;
+
+  :hover {
+    transition: all 200ms;
+    background-color: $colour-grey-20;
+  }
+}

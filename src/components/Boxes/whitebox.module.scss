@@ -1,0 +1,8 @@
+@import "../../styles/colours";
+
+.whitebox {
+  background-color: $colour-white;
+  padding: 4rem;
+  border: 1px solid $colour-grey-100;
+  margin: 30px 0;
+}
