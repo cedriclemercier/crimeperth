@@ -32,15 +32,20 @@ const NavigationItems = props => {
     <ul className={styles.navigationItems}>
       {data.wpMenu.menuItems.nodes.map(main => {
         return main.parentId === null ? (
-            <NavigationItem link={main.path} label={main.label} key={main.path}>
-              <SubNavigationItems key={main.path + "-sub"}>
-                {main.childItems.nodes.map(el => (
-                  <SubNavigationItem link={el.path} key={el.path}>
-                    {el.label}
-                  </SubNavigationItem>
-                ))}
-              </SubNavigationItems>
-            </NavigationItem>
+          <NavigationItem
+            link={main.path}
+            label={main.label}
+            key={main.path}
+            child={main.childItems.nodes.length > 0 ? true : false}
+          >
+            <SubNavigationItems key={main.path + "-sub"}>
+              {main.childItems.nodes.map(el => (
+                <SubNavigationItem link={el.path} key={el.path}>
+                  {el.label}
+                </SubNavigationItem>
+              ))}
+            </SubNavigationItems>
+          </NavigationItem>
         ) : null
       })}
     </ul>
