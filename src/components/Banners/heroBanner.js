@@ -4,7 +4,6 @@ import herovideo from "../../images/hero-banner.mp4"
 import styles from "./heroBanner.module.scss"
 
 const hero = props => {
-  const { size } = props
 
   let video = (
     <video className="video" width="100%" autoPlay loop muted>

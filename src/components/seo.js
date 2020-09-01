@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, yoast }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,7 +25,15 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  let metaDescription = description || site.siteMetadata.description
+  let opengraphDescription = `website`
+  let opengraphType = metaDescription
+
+  if (yoast) {
+    metaDescription = yoast.metaDesc
+    opengraphDescription = yoast.opengraphDescription
+    opengraphType = yoast.opengraphType
+  } 
 
   return (
     <Helmet
@@ -45,11 +53,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: opengraphDescription,
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: opengraphType,
         },
         {
           name: `twitter:card`,

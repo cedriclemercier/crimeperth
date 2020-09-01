@@ -32,7 +32,7 @@ const BlogItem = props => {
         <p>
           Tags:{" "}
           {tags.map((el, index) => (
-            <span className={styles.tags}>
+            <span className={styles.tags} key={el.id} >
               {el.name + (tags[index + 1] ? ", " : "")}
             </span>
           ))}

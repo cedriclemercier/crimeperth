@@ -11,6 +11,18 @@ export const query = graphql`
       title
       slug
       content
+      seo {
+        metaDesc
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphDescription
+        opengraphModifiedTime
+        opengraphSiteName
+        opengraphTitle
+        opengraphType
+        opengraphUrl
+        canonical
+      }
     }
   }
 `
@@ -27,7 +39,7 @@ const Blog = props => {
 
   return (
     <Layout>
-      <SEO title={props.data.wpPost.title} />
+      <SEO title={props.data.wpPost.title} yoast={props.data.wpPost.seo} />
       <InfoBanner>
         <div className="container">
           <p>24/7 BIOREMEDIATION SERVICE | CALL 1300 246 429</p>

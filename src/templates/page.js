@@ -14,6 +14,18 @@ export const query = graphql`
       slug
       content
       isPostsPage
+      seo {
+        metaDesc
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphDescription
+        opengraphModifiedTime
+        opengraphSiteName
+        opengraphTitle
+        opengraphType
+        opengraphUrl
+        canonical
+      }
     }
     allWpPost {
       edges {
@@ -26,6 +38,7 @@ export const query = graphql`
             nodes {
               name
               slug
+              id
             }
           }
           author {
@@ -65,6 +78,7 @@ const Page = props => {
                 tags={el.node.tags}
                 slug={el.node.slug}
                 date={el.node.date}
+                key={el.node.slug}
               />
             )
           })}
@@ -72,17 +86,18 @@ const Page = props => {
       </section>
     )
   }
+  
 
   return (
     <Layout>
-      <SEO title={props.data.wpPage.title} />
+      <SEO title={props.data.wpPage.title} yoast={props.data.wpPage.seo} />
       <InfoBanner>
         <div className="container">
           <p>24/7 BIOREMEDIATION SERVICE | CALL 1300 246 429</p>
         </div>
       </InfoBanner>
       <HeroBanner size="small">
-        <div class="container">
+        <div className="container">
           <h1 className="text-primary">{props.data.wpPage.title}</h1>
         </div>
       </HeroBanner>

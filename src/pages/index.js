@@ -17,6 +17,18 @@ const IndexPage = props => {
         slug
         title
         content
+        seo {
+          metaDesc
+          metaRobotsNofollow
+          metaRobotsNoindex
+          opengraphDescription
+          opengraphModifiedTime
+          opengraphSiteName
+          opengraphTitle
+          opengraphType
+          opengraphUrl
+          canonical
+        }
       }
     }
   `)
@@ -44,7 +56,7 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <SEO title={data.wpPage.title} />
+      <SEO title={data.wpPage.title} yoast={data.wpPage.seo} />
       <InfoBanner>
         <div className="container">
           <p>24/7 BIOREMEDIATION SERVICE | CALL 1300 246 429</p>
@@ -78,7 +90,7 @@ const IndexPage = props => {
         </div>
       </section>
       <section>
-        <div class="container">
+        <div className="container">
           <h2>Contact us</h2>
           <ContactForm id="2124" />
         </div>
