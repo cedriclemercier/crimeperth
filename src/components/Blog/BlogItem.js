@@ -25,14 +25,14 @@ const BlogItem = props => {
         <Link to={"/" + props.slug}>
           <h3>{props.title}</h3>
         </Link>
-        <p>{props.excerpt}</p>
+        <p dangerouslySetInnerHTML={{ __html: props.excerpt }}></p>
         <p>
           By: <span className="text-primary">{props.author.node.name}</span>
         </p>
         <p>
           Tags:{" "}
           {tags.map((el, index) => (
-            <span className={styles.tags} key={el.id} >
+            <span className={styles.tags} key={el.id}>
               {el.name + (tags[index + 1] ? ", " : "")}
             </span>
           ))}

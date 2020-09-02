@@ -26,6 +26,9 @@ export const query = graphql`
         opengraphUrl
         canonical
       }
+      acfBanner {
+        bannerContent
+      }
     }
     allWpPost {
       edges {
@@ -86,14 +89,13 @@ const Page = props => {
       </section>
     )
   }
-  
 
   return (
     <Layout>
       <SEO title={props.data.wpPage.title} yoast={props.data.wpPage.seo} />
       <InfoBanner>
         <div className="container">
-          <p>24/7 BIOREMEDIATION SERVICE | CALL 1300 246 429</p>
+          <p>{props.data.wpPage.acfBanner.bannerContent}</p>
         </div>
       </InfoBanner>
       <HeroBanner size="small">

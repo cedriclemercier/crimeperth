@@ -1,20 +1,20 @@
 import React from "react"
-import herovideo from "../../images/hero-banner.mp4"
 
 import styles from "./heroBanner.module.scss"
 
 const hero = props => {
+  const { height } = props
 
   let video = (
     <video className="video" width="100%" autoPlay loop muted>
-      <source src={herovideo} type="video/mp4" />
+      <source src={props.imageUrl} type="video/mp4" />
     </video>
   )
 
   return (
     <div
       className={[
-        props.size === "small" ? styles.small : styles.large,
+        height === "large" ? styles.large : styles.small,
         styles.heroContainer,
       ].join(" ")}
     >

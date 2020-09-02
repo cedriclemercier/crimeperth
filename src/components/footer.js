@@ -32,7 +32,7 @@ const Footer = props => {
               />
               <h3>CONTACT CRIME SCENE CLEANER PERTH</h3>
               <p>
-                PHONE 1300 246 429 EMAIL admin@crimescenecleanerperth.com.au
+                PHONE 1300 246 429 
               </p>
               <p>
                 The team at Crime Scene Cleaner Perth understand the importance

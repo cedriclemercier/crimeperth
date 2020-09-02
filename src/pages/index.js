@@ -29,6 +29,15 @@ const IndexPage = props => {
           opengraphUrl
           canonical
         }
+        acfHeader {
+          bannerHeight
+          bannerImage
+          subtitle
+          title
+        }
+        acfBanner {
+          bannerContent
+        }
       }
     }
   `)
@@ -59,21 +68,20 @@ const IndexPage = props => {
       <SEO title={data.wpPage.title} yoast={data.wpPage.seo} />
       <InfoBanner>
         <div className="container">
-          <p>24/7 BIOREMEDIATION SERVICE | CALL 1300 246 429</p>
+          <p>{data.wpPage.acfHeader.bannerContent}</p>
         </div>
       </InfoBanner>
-      <HeroBanner size="large">
+      <HeroBanner
+        size="large"
+        imageUrl={data.wpPage.acfHeader.bannerImage}
+        height={data.wpPage.acfHeader.bannerHeight}
+      >
         <div className="container">
           <div className="row-flex">
             <div className="col-1">
               <WhiteBox>
-                <h2 className="text-primary">
-                  The Biohazard Cleaners Experts in Perth
-                </h2>
-                <p>
-                  Look no further for unexpected bio hazardous situations that
-                  requires a company with a discrete service
-                </p>
+                <h2 className="text-primary">{data.wpPage.acfHeader.title}</h2>
+                <p>{data.wpPage.acfHeader.subtitlte}</p>
                 <DefaultButton to="tel:1300246429">
                   CALL 1300 249 429
                 </DefaultButton>
