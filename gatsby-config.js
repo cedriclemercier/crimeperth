@@ -37,11 +37,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Crime Scene cleaner Perth`,
+        short_name: `CSC Perth`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/perth-logo.png`, // This path is relative to the root of the site.
       },

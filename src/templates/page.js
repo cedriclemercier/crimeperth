@@ -29,6 +29,13 @@ export const query = graphql`
       acfBanner {
         bannerContent
       }
+      acfFooter {
+        numberOfColumns
+        footerColumn4
+        footerColumn3
+        footerColumn2
+        footerColumn1
+      }
     }
     allWpPost {
       edges {
@@ -91,7 +98,7 @@ const Page = props => {
   }
 
   return (
-    <Layout>
+    <Layout footerContent={props.data.wpPage.acfFooter}>
       <SEO title={props.data.wpPage.title} yoast={props.data.wpPage.seo} />
       <InfoBanner>
         <div className="container">

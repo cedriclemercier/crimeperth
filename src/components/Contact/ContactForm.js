@@ -20,10 +20,10 @@ const ContactForm = () => {
       method: "post",
       url: `${WEBSITE_URL}/wp-json/jwt-auth/v1/token`,
       data: {
-        // username: "Subscriber", // provide a user credential with subscriber role, this user does not have any priviledges so exposing this is fine at the moment
-        // password: "UaqwFL22W#5)uNafDx3#BMPJ",
-        username: process.env.USERNAME, // provide a user credential with subscriber role, this user does not have any priviledges so exposing this is fine at the moment
-        password: process.env.USERPASSWORD,
+        username: "Subscriber", // provide a user credential with subscriber role, this user does not have any priviledges so exposing this is fine at the moment
+        password: "UaqwFL22W#5)uNafDx3#BMPJ",
+        // username: process.env.USERNAME,
+        // password: process.env.USERPASSWORD,
       },
       headers: {
         "Content-Type": "application/json",

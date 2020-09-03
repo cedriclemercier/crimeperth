@@ -8,7 +8,6 @@ const SidebarNav = props => {
   let classes = [styles.sidebar, styles.close]
 
   if (props.show) {
-    console.log(props)
     classes = [styles.sidebar, styles.open]
   }
 

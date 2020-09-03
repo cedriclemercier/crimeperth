@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title, yoast }) {
-  const { site } = useStaticQuery(
+  const { site, wp } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,6 +19,15 @@ function SEO({ description, lang, meta, title, yoast }) {
             title
             description
             author
+          }
+        }
+        wp {
+          seo {
+            schema {
+              logo {
+                mediaItemUrl
+              }
+            }
           }
         }
       }
@@ -33,7 +42,7 @@ function SEO({ description, lang, meta, title, yoast }) {
     metaDescription = yoast.metaDesc
     opengraphDescription = yoast.opengraphDescription
     opengraphType = yoast.opengraphType
-  } 
+  }
 
   return (
     <Helmet
@@ -76,7 +85,9 @@ function SEO({ description, lang, meta, title, yoast }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="icon" href={wp.seo.schema.logo.mediaItemUrl}></link>
+    </Helmet>
   )
 }
 

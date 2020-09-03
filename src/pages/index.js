@@ -41,7 +41,7 @@ const IndexPage = props => {
       }
     }
   `)
-
+  
   const func = () => {
     let acc = document.querySelectorAll(".accordion")
     let i
@@ -81,7 +81,7 @@ const IndexPage = props => {
             <div className="col-1">
               <WhiteBox>
                 <h2 className="text-primary">{data.wpPage.acfHeader.title}</h2>
-                <p>{data.wpPage.acfHeader.subtitlte}</p>
+                <p>{data.wpPage.acfHeader.subtitle}</p>
                 <DefaultButton to="tel:1300246429">
                   CALL 1300 249 429
                 </DefaultButton>

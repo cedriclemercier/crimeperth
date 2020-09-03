@@ -1,19 +1,20 @@
 import React from "react"
+import { IoMdMenu } from "react-icons/io"
 
 import styles from "./burger.module.scss"
 
 const Burger = props => {
   return (
     <div className={styles.burgerContainer}>
-      <div
-        className={styles.burger}
+      <IoMdMenu
         onClick={props.sidebarToggle}
-        onKeyDown={props.sidebarToggle}
-      >
-        <div className={styles.item} />
-        <div className={styles.item} />
-        <div className={styles.item} />
-      </div>
+        className={styles.burger}
+        style={{
+          fontSize: 36,
+          cursor: "pointer",
+          textAlign: "right",
+        }}
+      />
     </div>
   )
 }

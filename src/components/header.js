@@ -1,10 +1,12 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
+import { IoLogoFacebook, IoLogoReddit } from "react-icons/io"
+
+import Backdrop from "./UI/Backdrop"
 import NavigationItems from "./Navigation/NavigationItems"
 import Burger from "./Navigation/burger"
 import Sidebar from "./Navigation/sidebarNav"
-import { IoLogoFacebook, IoLogoReddit } from "react-icons/io"
 
 import Logo from "./UI/Logo"
 import SocialIcon from "./Social/SocialIcon"
@@ -24,6 +26,7 @@ const Header = props => {
 
   return (
     <header className={styles.headerContainer}>
+      <Backdrop show={sidebarOpen} onPress={sidebarCloseHandler} />
       <div className="container">
         <div className={styles.header}>
           <div className={styles.headerItem}>
