@@ -38,10 +38,17 @@ const IndexPage = props => {
         acfBanner {
           bannerContent
         }
+        acfFooter {
+          numberOfColumns
+          footerColumn4
+          footerColumn3
+          footerColumn2
+          footerColumn1
+        }
       }
     }
   `)
-  
+
   const func = () => {
     let acc = document.querySelectorAll(".accordion")
     let i
@@ -64,11 +71,11 @@ const IndexPage = props => {
   }, [])
 
   return (
-    <Layout>
+    <Layout footerContent={data.wpPage.acfFooter}>
       <SEO title={data.wpPage.title} yoast={data.wpPage.seo} />
       <InfoBanner>
         <div className="container">
-          <p>{data.wpPage.acfHeader.bannerContent}</p>
+          <p>{data.wpPage.acfBanner.bannerContent}</p>
         </div>
       </InfoBanner>
       <HeroBanner

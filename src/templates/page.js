@@ -1,5 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
+// import TransitionLink from "gatsby-plugin-transition-link"
+// import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -63,7 +65,7 @@ export const query = graphql`
   }
 `
 
-const Page = props => {
+const Page = (props) => {
   let pageContent = (
     <section>
       <div

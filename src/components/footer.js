@@ -66,26 +66,23 @@ const Footer = props => {
   )
 
   if (props.content) {
-    let numOfCols = props.content.numberOfColumns
-    let content = []
-    let count = 0
 
-    for (const [key, value] of Object.entries(props.content)) {
+    let arr = []
+    for (const key in props.content) {
       if (key === "numberOfColumns") {
         continue
       }
-      if (count === numOfCols) break
-      content.push({ col: value })
-      count++
+      arr.push({ col: props.content[key] })
     }
 
-    content.reverse()
+    arr.reverse()
+    const transformedArray = arr.slice(0, props.content.numberOfColumns)
 
     footerContent = (
       <div className={styles.footer}>
         <div className="container">
           <div className="row-flex">
-            {content.map((el, index) => {
+            {transformedArray.map((el, index) => {
               return (
                 <div
                   className="col-1"

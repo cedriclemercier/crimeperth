@@ -13,6 +13,11 @@ const ContactForm = () => {
   const [token, setToken] = useState("") // store token
   const [isSuccessMessage, setIsSuccessMessage] = useState(false) // manage is success message state
   const [messageSent, setMessageSent] = useState(false) // manage sent message state
+  const [submitting, setIsSubmitting] = useState(false)
+
+  const submitHandler = () => {
+    setIsSubmitting(true)
+  }
 
   // this effect function authenticates our subcriber user to get a token
   useEffect(() => {
@@ -64,18 +69,18 @@ const ContactForm = () => {
       })
         .then(response => {
           // actions taken when submission goes OK
-          console.log(response)
           resetForm()
           setSubmitting(false)
           setMessageSent(true)
           setIsSuccessMessage(true)
+          setIsSubmitting(false)
         })
         .catch(error => {
           // actions taken when submission goes wrong
-          console.log(error)
           setSubmitting(false)
           setMessageSent(true)
           setIsSuccessMessage(false)
+          setIsSubmitting(false)
         })
     },
   })
@@ -138,11 +143,12 @@ const ContactForm = () => {
         <div>
           {/* <button type="submit" value="Send Message" disabled={isSubmitting} /> */}
           <SubmitButton
+            onClick={submitHandler}
             type="submit"
             value="Send Message"
             disabled={isSubmitting}
           >
-            Submit
+            {!submitting ? "Submit" : "Loading..."}
           </SubmitButton>
         </div>
         {messageSent && isSuccessMessage && (
