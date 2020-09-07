@@ -1,13 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import TransitionLink from "gatsby-plugin-transition-link"
-// import AniLink from "gatsby-plugin-transition-link/AniLink"
+import contentParser from "gatsby-wpgraphql-inline-images"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HeroBanner from "../components/Banners/heroBanner"
 import InfoBanner from "../components/Banners/infoBanner"
 import BlogItem from "../components/Blog/BlogItem"
+
+const pluginOptions = {
+  wordPressUrl: "https://admin.crimescenecleanerperth.com.au/",
+  uploadsUrl: "https://admin.crimescenecleanerperth.com.au/wp-content/uploads/",
+}
 
 export const query = graphql`
   query($slug: String!) {
@@ -65,13 +69,18 @@ export const query = graphql`
   }
 `
 
-const Page = (props) => {
+const Page = props => {
+  const { content } = props.data.wpPage
+
   let pageContent = (
     <section>
-      <div
+      {/* <div
         className="container"
         dangerouslySetInnerHTML={{ __html: props.data.wpPage.content }}
-      ></div>
+      ></div> */}
+      <div className="container">
+        {contentParser({ content }, pluginOptions)}
+      </div>
     </section>
   )
 
