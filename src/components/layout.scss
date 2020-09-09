@@ -47,7 +47,7 @@ a {
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
   color: $colour-primary;
-  font-size: 14px;
+  font-size: 15px;
 }
 a:active,
 a:hover {
@@ -258,7 +258,7 @@ h2 {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1.1;
 }
 h3 {
@@ -275,7 +275,7 @@ h3 {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 2.4rem;
+  font-size: 24px;
   line-height: 1.1;
 }
 h4 {
@@ -391,7 +391,7 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 2.3rem;
   line-height: 1.6;
 }
@@ -519,7 +519,7 @@ th {
 }
 li {
   margin-bottom: calc(1.45rem / 2);
-  font-size: 1.3rem;
+  font-size: 15px;
 }
 ol li {
   padding-left: 0;

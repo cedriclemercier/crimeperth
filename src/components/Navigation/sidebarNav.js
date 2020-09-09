@@ -17,9 +17,10 @@ const SidebarNav = props => {
         <IoIosClose
           onClick={props.sidebarClose}
           style={{
-            fontSize: 36,
+            fontSize: 44,
             cursor: "pointer",
             textAlign: "right",
+            marginRight: 10,
           }}
         />
       </div>

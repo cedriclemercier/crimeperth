@@ -51,7 +51,7 @@ module.exports = {
         wordPressUrl: "https://admin.crimescenecleanerperth.com.au/",
         uploadsUrl:
           "https://admin.crimescenecleanerperth.com.au/wp-content/uploads/",
-        processPostTypes: ["Page", "Post", "CustomPost"],
+        // processPostTypes: ["Page", "Post", "CustomPost"],
         graphqlTypeName: "WPGraphQL",
       },
     },

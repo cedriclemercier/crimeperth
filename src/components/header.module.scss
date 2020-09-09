@@ -1,20 +1,23 @@
 @import "../styles/colours";
 
 .headerContainer {
-  background-image: url("../images/header-bg.png");
-  background-size: 90%;
-  background-repeat: no-repeat;
+  background-color: #fff;
+  position: fixed;
+  z-index: 9;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .headerContainer {
+    background-image: url("../images/header-bg.png");
+    position: relative;
     background-position-x: 10vw;
     background-size: 70%;
   }
 }
 
 .header {
-  padding: 20px 0px;
+  padding: 15px 0px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
