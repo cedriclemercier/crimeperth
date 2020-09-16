@@ -12,6 +12,7 @@ export const query = graphql`
       slug
       content
       seo {
+        canonical
         metaDesc
         metaRobotsNofollow
         metaRobotsNoindex

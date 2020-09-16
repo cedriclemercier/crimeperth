@@ -18,6 +18,7 @@ const IndexPage = props => {
         title
         content
         seo {
+          canonical
           metaDesc
           metaRobotsNofollow
           metaRobotsNoindex

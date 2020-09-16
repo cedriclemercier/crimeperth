@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title, yoast }) {
             title
             description
             author
+            siteUrl
           }
         }
 
@@ -95,6 +96,13 @@ function SEO({ description, lang, meta, title, yoast }) {
       ].concat(meta)}
     >
       <link rel="icon" href={wp.seo.schema.logo.mediaItemUrl}></link>
+
+      {yoast && (
+        <link
+          rel="canonical"
+          href={site.siteMetadata.siteUrl + yoast.canonical}
+        ></link>
+      )}
     </Helmet>
   )
 }

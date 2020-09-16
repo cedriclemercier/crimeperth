@@ -22,6 +22,7 @@ export const query = graphql`
       content
       isPostsPage
       seo {
+        canonical
         metaDesc
         metaRobotsNofollow
         metaRobotsNoindex
