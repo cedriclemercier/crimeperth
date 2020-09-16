@@ -21,8 +21,12 @@ function SEO({ description, lang, meta, title, yoast }) {
             author
           }
         }
+
         wp {
           seo {
+            webmaster {
+              googleVerify
+            }
             schema {
               logo {
                 mediaItemUrl
@@ -83,6 +87,10 @@ function SEO({ description, lang, meta, title, yoast }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `google-site-verification`,
+          content: wp.seo.webmaster.googleVerify,
         },
       ].concat(meta)}
     >
