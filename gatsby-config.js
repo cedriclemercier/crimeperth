@@ -3,9 +3,19 @@ module.exports = {
     title: `Crime Scene Cleaner Perth`,
     description: `The Industry Experts in Crime Scene Cleaning, Forensic Cleaning, Biological Remediation and Meth Lab Decontamination throughout Perth and regional Western Australia.`,
     author: `Forensic Cleaning`,
+    siteUrl: `https://crimescenecleanerperth.com.au`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: "https://crimescenecleanerperth.com.au",
+        sitemap: "https://crimescenecleanerperth.com.au/sitemap_index.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    `gatsby-plugin-advanced-sitemap`,
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {

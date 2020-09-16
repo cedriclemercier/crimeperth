@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://crimescenecleanerperth.com.au/sitemap_index.xml
+Host: https://crimescenecleanerperth.com.au

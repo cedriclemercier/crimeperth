@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import HeroBanner from "../components/Banners/heroBanner"
 import InfoBanner from "../components/Banners/infoBanner"
 import BlogItem from "../components/Blog/BlogItem"
+import ContactForm from "../components/Contact/ContactForm"
 
 const pluginOptions = {
   wordPressUrl: "https://admin.crimescenecleanerperth.com.au/",
@@ -80,6 +81,9 @@ const Page = props => {
       ></div> */}
       <div className="container">
         {contentParser({ content }, pluginOptions)}
+        <div>
+          {props.data.wpPage.slug === "contact" && <ContactForm id="2124" />}
+        </div>
       </div>
     </section>
   )

@@ -10,11 +10,13 @@
     "formik": "^2.1.5",
     "gatsby": "^2.24.47",
     "gatsby-image": "^2.4.16",
+    "gatsby-plugin-advanced-sitemap": "^1.5.6",
     "gatsby-plugin-google-analytics": "^2.3.13",
     "gatsby-plugin-hotjar": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.23",
     "gatsby-plugin-offline": "^3.2.23",
     "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sharp": "^2.6.27",
     "gatsby-plugin-transition-link": "^1.20.2",
@@ -37,6 +39,7 @@
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
+    "generate-robotstxt": "^8.0.3",
     "prettier": "2.0.5"
   },
   "keywords": [
