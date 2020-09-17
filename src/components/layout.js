@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import axios from "axios"
 
 import styled from "styled-components"
 
@@ -19,6 +20,45 @@ const Main = styled.div`
 `
 
 const Layout = ({ children, footerContent }) => {
+  const [userIP, setUserIP] = useState("")
+
+  useEffect(() => {
+    axios
+      .get("http://edns.ip-api.com/json", {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
+      .then(response => {
+        let responseData = response.data
+        console.log(responseData)
+        setUserIP(responseData.dns.ip)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+
+    axios
+      .get(`http://ip-api.com/json/${userIP}`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
+      .then(response => {
+        const resData = response.data
+        if (
+          resData.countryCode === "CN" ||
+          resData.countryCode === "IN" ||
+          resData.countryCode === "RU"
+        ) {
+          window.location("/404")
+        }
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, [userIP])
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
