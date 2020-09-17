@@ -24,7 +24,7 @@ const Layout = ({ children, footerContent }) => {
 
   useEffect(() => {
     axios
-      .get("http://edns.ip-api.com/json", {
+      .get("https://edns.ip-api.com/json", {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
@@ -39,7 +39,7 @@ const Layout = ({ children, footerContent }) => {
       })
 
     axios
-      .get(`http://ip-api.com/json/${userIP}`, {
+      .get(`https://ip-api.com/json/${userIP}`, {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
