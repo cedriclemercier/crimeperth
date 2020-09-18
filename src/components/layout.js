@@ -47,7 +47,7 @@ const Layout = ({ children, footerContent }) => {
       })
 
     axios
-      .get(`http://ip-api.com/json/${userIP}?fields=countryCode`)
+      .get(`http://ip-api.com/json/${userIP}?fields=countryCode/`)
       .then(response => {
         const resData = response.data
         if (
