@@ -28,41 +28,41 @@ const Loading = styled.div`
 `
 
 const Layout = ({ children, footerContent }) => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [userIP, setUserIP] = useState("")
+  // const [isLoading, setIsLoading] = useState(true)
+  // const [userIP, setUserIP] = useState("")
 
-  const setDetails = async ip => {
-    await setUserIP(ip)
-  }
+  // const setDetails = async ip => {
+  //   await setUserIP(ip)
+  // }
 
-  useEffect(() => {
-    axios
-      .get(`https://edns.ip-api.com/json/`)
-      .then(response => {
-        let responseData = response.data
-        setDetails(responseData.dns.ip)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://edns.ip-api.com/json/`)
+  //     .then(response => {
+  //       let responseData = response.data
+  //       setDetails(responseData.dns.ip)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
 
-    axios
-      .get(`http://ip-api.com/json/${userIP}?fields=countryCode/`)
-      .then(response => {
-        const resData = response.data
-        if (
-          resData.countryCode === "CN" ||
-          resData.countryCode === "IN" ||
-          resData.countryCode === "RU"
-        ) {
-          navigate("/404")
-        }
-        setIsLoading(false)
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }, [userIP, isLoading])
+  //   axios
+  //     .get(`http://ip-api.com/json/${userIP}?fields=countryCode/`)
+  //     .then(response => {
+  //       const resData = response.data
+  //       if (
+  //         resData.countryCode === "CN" ||
+  //         resData.countryCode === "IN" ||
+  //         resData.countryCode === "RU"
+  //       ) {
+  //         navigate("/404")
+  //       }
+  //       setIsLoading(false)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  // }, [userIP, isLoading])
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -80,13 +80,14 @@ const Layout = ({ children, footerContent }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Main>
-        {!isLoading ? (
+        {content}
+        {/* {!isLoading ? (
           content
         ) : (
           <Loading>
             <div>Loading...</div>
           </Loading>
-        )}
+        )} */}
         <Footer content={footerContent} />
       </Main>
     </>
