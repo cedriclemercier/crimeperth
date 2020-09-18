@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, navigate } from "gatsby"
 import axios from "axios"
 
 import styled from "styled-components"
@@ -19,31 +19,35 @@ const Main = styled.div`
   }
 `
 
+const Loading = styled.div`
+  display: flex;
+  flex: 1;
+  min-height: 400px;
+  justify-content: center;
+  align-items: center;
+`
+
 const Layout = ({ children, footerContent }) => {
+  const [isLoading, setIsLoading] = useState(true)
   const [userIP, setUserIP] = useState("")
+
+  const setDetails = async ip => {
+    await setUserIP(ip)
+  }
 
   useEffect(() => {
     axios
-      .get("https://edns.ip-api.com/json", {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
+      .get(`https://edns.ip-api.com/json/`)
       .then(response => {
         let responseData = response.data
-        console.log(responseData)
-        setUserIP(responseData.dns.ip)
+        setDetails(responseData.dns.ip)
       })
       .catch(error => {
         console.log(error)
       })
 
     axios
-      .get(`https://ip-api.com/json/${userIP}`, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
+      .get(`http://ip-api.com/json/${userIP}?fields=countryCode`)
       .then(response => {
         const resData = response.data
         if (
@@ -51,13 +55,14 @@ const Layout = ({ children, footerContent }) => {
           resData.countryCode === "IN" ||
           resData.countryCode === "RU"
         ) {
-          window.location("/404")
+          navigate("/404")
         }
+        setIsLoading(false)
       })
       .catch(error => {
         console.log(error)
       })
-  }, [userIP])
+  }, [userIP, isLoading])
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -69,11 +74,19 @@ const Layout = ({ children, footerContent }) => {
     }
   `)
 
+  let content = <main>{children}</main>
+
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Main>
-        <main>{children}</main>
+        {!isLoading ? (
+          content
+        ) : (
+          <Loading>
+            <div>Loading...</div>
+          </Loading>
+        )}
         <Footer content={footerContent} />
       </Main>
     </>
