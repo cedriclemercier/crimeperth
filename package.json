@@ -26,6 +26,7 @@
     "gatsby-transformer-sharp": "^2.5.13",
     "gatsby-video": "^0.2.0",
     "gatsby-wpgraphql-inline-images": "^0.2.5",
+    "geoip-lite": "^1.4.2",
     "gsap": "^3.5.1",
     "html-react-parser": "^0.13.0",
     "node-sass": "^4.14.1",

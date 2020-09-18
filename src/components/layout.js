@@ -28,6 +28,7 @@ const Loading = styled.div`
 `
 
 const Layout = ({ children, footerContent }) => {
+  
   // const [isLoading, setIsLoading] = useState(true)
   // const [userIP, setUserIP] = useState("")
 

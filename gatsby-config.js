@@ -5,10 +5,6 @@ module.exports = {
     author: `Forensic Cleaning`,
     siteUrl: `https://crimescenecleanerperth.com.au`,
   },
-  proxy: {
-    prefix: "/",
-    url: "https://crimescenecleanerperth.com.au",
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

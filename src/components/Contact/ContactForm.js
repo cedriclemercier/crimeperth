@@ -48,7 +48,10 @@ const ContactForm = () => {
       email: "",
       message: "",
     },
-    onSubmit: ({ fullname, email, message }, { setSubmitting, resetForm }) => {
+    onSubmit: async (
+      { fullname, email, message },
+      { setSubmitting, resetForm }
+    ) => {
       setSubmitting(true)
       // here we created a FormData field for each form field
       const bodyFormData = new FormData()
@@ -56,6 +59,22 @@ const ContactForm = () => {
       //   bodyFormData.set("service", service)
       bodyFormData.set("email", email)
       bodyFormData.set("message", message)
+
+      try {
+        const res = await fetch(`https://api.ipify.org?format=json`)
+        const resdata = await res.json()
+        const geocode = await fetch(
+          `https://geo.ipify.org/api/v1?apiKey=at_GMtJycli78jSuYQVMl79fTN6TvPM1&ipAddress=${resdata.ip}`
+        )
+        const geocoderesdata = await geocode.json()
+        if (geocoderesdata.location.country === "IN") {
+          setSubmitting(false)
+          setMessageSent(true)
+          setIsSuccessMessage(false)
+          setIsSubmitting(false)
+          throw new Error("There was an error")
+        }
+      } catch (err) {}
 
       // here we sent
       axios({
@@ -148,12 +167,12 @@ const ContactForm = () => {
             value="Send Message"
             disabled={isSubmitting}
           >
-            {!submitting ? "Submit" : "Loading..."}
+            {!submitting ? "Submit" : "Sending..."}
           </SubmitButton>
         </div>
         {messageSent && isSuccessMessage && (
           <div
-            class="container"
+            className="container"
             style={{
               padding: "20px",
               marginTop: "20px",
@@ -165,7 +184,7 @@ const ContactForm = () => {
         )}
         {messageSent && !isSuccessMessage && (
           <div
-            class="container"
+            className="container"
             style={{
               padding: "20px",
               marginTop: "20px",

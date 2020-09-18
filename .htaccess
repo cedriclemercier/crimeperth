@@ -2,3 +2,7 @@
     RewriteCond %{HTTP_HOST} ^crimescenecleanerperth\.com.au [NC] 
     RewriteCond %{SERVER_PORT} 80  
     RewriteRule ^(.*)$ https://crimescenecleanerperth.com.au/$1 [R,L] 
+
+    <IfModule mod_headers.c>
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
