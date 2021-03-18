@@ -104,7 +104,7 @@ const Footer = props => {
       <div className={styles.copyright}>
         <div className="container">
           <p className="no-padding">
-            © Copyright 2020 | All Rights Reserved | Melbourne Forensic Cleaning{" "}
+            © Copyright 2021 | All Rights Reserved | BIOHAZMAT{" "}
             {data.wpMenu.menuItems.nodes.map(el => (
               <Link key={el.path} to={el.path}>
                 | {el.label}{" "}
