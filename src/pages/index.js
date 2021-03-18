@@ -12,6 +12,13 @@ import ContactForm from "../components/Contact/ContactForm"
 const IndexPage = props => {
   const data = useStaticQuery(graphql`
     query {
+      site {
+        siteMetadata {
+          adminUrl
+        }
+      }
+    
+
       wpPage(isFrontPage: { eq: true }) {
         id
         slug
@@ -71,6 +78,8 @@ const IndexPage = props => {
     func()
   }, [])
 
+  console.log("LINK TO BANNER" + data.wpPage.acfHeader.bannerImage);
+
   return (
     <Layout footerContent={data.wpPage.acfFooter}>
       <SEO title={data.wpPage.title} yoast={data.wpPage.seo} />
@@ -81,7 +90,7 @@ const IndexPage = props => {
       </InfoBanner>
       <HeroBanner
         size="large"
-        imageUrl={data.wpPage.acfHeader.bannerImage}
+        imageUrl={data.site.siteMetadata.adminUrl+data.wpPage.acfHeader.bannerImage}
         height={data.wpPage.acfHeader.bannerHeight}
       >
         <div className="container">
